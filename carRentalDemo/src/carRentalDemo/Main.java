@@ -1,18 +1,17 @@
 package carRentalDemo;
 
+import carRentalDemo.Business.BrandManager;
 import carRentalDemo.Business.ColorManager;
+import carRentalDemo.Entities.Brand;
 import carRentalDemo.Entities.Color;
+import carRentalDemo.dataAccess.BrandDao;
 import carRentalDemo.dataAccess.ColorDao;
 
 public class Main {
 
 	public static void main(String[] args) throws Exception {
-		Color color = new Color("Mavi", 1);
-		ColorManager colorManager = new ColorManager(new ColorDao());
-
-		colorManager.addColor(color);
-		
-		colorManager.getAll();
+	    BrandManager brandManager = new BrandManager(new BrandDao());
+	    brandManager.getAll();
 
 	}
 

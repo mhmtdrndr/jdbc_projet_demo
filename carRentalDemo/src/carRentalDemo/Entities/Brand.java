@@ -1,45 +1,32 @@
 package carRentalDemo.Entities;
 
 public class Brand {
-	private int id;
-	private String brandName;
-	private boolean active;
-	
-	public Brand() {
-		
-	}
+    private String brandName;
+    private int active;
 
-	public Brand(int id, String brandName, boolean active) {
-		this.id = id;
-		this.brandName = brandName;
-		this.active = active;
-	}
+    public Brand() {
 
-	public int getId() {
-		return id;
-	}
+    }
 
-	public void setId(int id) {
-		this.id = id;
-	}
+    public Brand(String brandName, int active) {
+        this.brandName = brandName;
+        this.active = active;
+    }
 
-	public String getBrandName() {
-		return brandName;
-	}
+    public String getBrandName() {
+        return brandName;
+    }
 
-	public void setBrandName(String brandName) {
-		this.brandName = brandName;
-	}
+    public void setBrandName(String brandName) {
+        this.brandName = brandName;
+    }
 
-	public boolean isActive() {
-		return active;
-	}
+    public int getActive() {
+        return active;
+    }
 
-	public void setActive(boolean active) {
-		this.active = active;
-	}
-	
-	
-	
+    public void setActive(int active) {
+        this.active = active;
+    }
 
 }
