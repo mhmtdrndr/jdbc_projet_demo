@@ -7,7 +7,7 @@ import carRentalDemo.dataAccess.IColorDao;
 
 public class ColorManager implements IColorManager {
 
-    IColorDao<Color> iColorDao;
+    private IColorDao<Color> iColorDao;
 
     public ColorManager(IColorDao<Color> iColorDao) {
         this.iColorDao = iColorDao;

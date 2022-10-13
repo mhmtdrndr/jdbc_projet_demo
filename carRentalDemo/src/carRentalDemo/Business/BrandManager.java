@@ -7,7 +7,7 @@ import carRentalDemo.dataAccess.IBrandDao;
 
 public class BrandManager implements IBrandManager {
     
-    IBrandDao<Brand> iBrandDao;
+    private IBrandDao<Brand> iBrandDao;
     
     public BrandManager(IBrandDao<Brand> iBrandDao) {
         this.iBrandDao = iBrandDao;
