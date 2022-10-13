@@ -1,13 +1,15 @@
 package carRentalDemo.Business;
 
+import java.util.List;
+
 import carRentalDemo.Entities.Color;
 import carRentalDemo.dataAccess.IColorDao;
 
 public class ColorManager implements IColorManager {
 
-    IColorDao iColorDao;
+    IColorDao<Color> iColorDao;
 
-    public ColorManager(IColorDao iColorDao) {
+    public ColorManager(IColorDao<Color> iColorDao) {
         this.iColorDao = iColorDao;
     }
 
@@ -23,7 +25,7 @@ public class ColorManager implements IColorManager {
     }
 
     @Override
-    public Color getAll() {
+    public List<Color> getAll() {
         for (Color c : iColorDao.getAll()) {
             System.out.println("Renk Adı : " + c.getColorName() + " Aktif Mi? :" + c.getActive());
         }

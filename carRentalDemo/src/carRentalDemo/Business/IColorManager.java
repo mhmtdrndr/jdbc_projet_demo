@@ -1,9 +1,10 @@
 package carRentalDemo.Business;
 
+import java.util.List;
+
 import carRentalDemo.Entities.Color;
 
 public interface IColorManager {
-    public void addColor(Color color) throws Exception;
-
-    public Color getAll();
+    void addColor(Color color) throws Exception;
+    List<Color> getAll();
 }

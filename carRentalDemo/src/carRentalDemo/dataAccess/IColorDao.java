@@ -4,7 +4,7 @@ import java.util.List;
 
 import carRentalDemo.Entities.Color;
 
-public interface IColorDao {
+public interface IColorDao<T> {
 	void addColor(Color color);
-	List<Color> getAll(); 
+	List<T> getAll(); 
 }

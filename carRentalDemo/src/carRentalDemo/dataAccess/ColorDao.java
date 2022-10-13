@@ -10,7 +10,7 @@ import java.util.List;
 import carRentalDemo.Entities.Color;
 import carRentalDemo.dbConn.DbHelper;
 
-public class ColorDao implements IColorDao {
+public class ColorDao implements IColorDao<Color> {
 
     DbHelper dbHelper = new DbHelper();
     Connection connection = null;
