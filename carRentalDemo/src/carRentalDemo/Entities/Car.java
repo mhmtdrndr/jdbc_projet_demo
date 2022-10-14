@@ -1,35 +1,25 @@
 package carRentalDemo.Entities;
 
 public class Car {
-	private int id;
-	private String plateNumber;
-	private int brandId;
-	private int colorId;
-	private int modelYear;
-	private double dailyPrice;
-	private String description;
-	
-	public Car() {
-		
-	}
+    private String plateNumber;
+    private int brandId;
+    private int colorId;
+    private int modelYear;
+    private double dailyPrice;
+    private String description;
 
-    public Car(int id, String plateNumber, int brandId, int colorId, int modelYear, double dailyPrice,
+    public Car() {
+
+    }
+
+    public Car(String plateNumber, int brandId, int colorId, int modelYear, double dailyPrice,
             String description) {
-        this.id = id;
         this.plateNumber = plateNumber;
         this.brandId = brandId;
         this.colorId = colorId;
         this.modelYear = modelYear;
         this.dailyPrice = dailyPrice;
         this.description = description;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public String getPlateNumber() {
@@ -79,7 +69,11 @@ public class Car {
     public void setDescription(String description) {
         this.description = description;
     }
-	
-		
-	
+
+    @Override
+    public String toString() {
+        return "Araç [PlakaNo=" + plateNumber + ", MarkaId=" + brandId + ", RenkId=" + colorId + ", Model Yılı="
+                + modelYear + ", Günlük Kira Ücreti=" + dailyPrice + ", Açıklama=" + description + "]";
+    }
+
 }
