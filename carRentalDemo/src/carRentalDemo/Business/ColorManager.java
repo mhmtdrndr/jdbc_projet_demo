@@ -18,6 +18,8 @@ public class ColorManager implements IColorManager {
         for (Color colors : iColorDao.getAll()) {
             if (colors.getColorName().equals(color.getColorName())) {
                 throw new Exception("Girilen renk ismi veritabanında mecvuttur!!! :" + color.getColorName());
+            } else if(colors.getColorId().equals(color.getColorId())) {
+                throw new Exception("Girilen renk kodundaki renk veritabanında mecvuttur!!! :" + color.getColorId());
             }
         }
         iColorDao.addColor(color);
@@ -27,7 +29,7 @@ public class ColorManager implements IColorManager {
     @Override
     public List<Color> getAll() {
         for (Color c : iColorDao.getAll()) {
-            System.out.println("Renk Adı : " + c.getColorName() + " Aktif Mi? :" + c.getActive());
+            System.out.println("Renk Kodu : " + c.getColorId() + " Renk Adı : " + c.getColorName() + " Aktif Mi? :" + c.getActive());
         }
         return null;
     }

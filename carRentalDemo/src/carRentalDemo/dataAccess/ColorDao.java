@@ -22,9 +22,10 @@ public class ColorDao implements IColorDao<Color> {
         try {
             connection = dbHelper.getConnection();
             statement = connection.createStatement();
+            String colorId = color.getColorId();
             String colorName = color.getColorName();
             int active = color.getActive();
-            String sqlString = "insert into Colors (ColorName, Active) values ('" + colorName + "','" + active + "')";
+            String sqlString = "insert into Colors (ColorId, ColorName, Active) values ('" + colorId + "','" + colorName + "','" + active + "')";
             statement.executeUpdate(sqlString);
         } catch (SQLException exception) {
             exception.printStackTrace();
@@ -40,7 +41,7 @@ public class ColorDao implements IColorDao<Color> {
             statement = connection.createStatement();
             resultSet = statement.executeQuery("select * from Colors");
             while(resultSet.next()) {
-                Color color = new Color(resultSet.getString("ColorName"),resultSet.getInt("Active"));
+                Color color = new Color(resultSet.getString("ColorId") ,resultSet.getString("ColorName"),resultSet.getInt("Active"));
                 colors.add(color);
             }
         } catch (SQLException e) {

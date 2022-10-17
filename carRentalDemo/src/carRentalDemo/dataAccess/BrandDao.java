@@ -22,9 +22,10 @@ public class BrandDao implements IBrandDao<Brand>{
         try {
             connection = dbHelper.getConnection();
             statement = connection.createStatement();
+            String brandId = brand.getBrandId();
             String brandName = brand.getBrandName();
             int active = brand.getActive();
-            String sqlString = "insert into Brands (BrandName, Active) values ('" + brandName + "','" + active + "')";
+            String sqlString = "insert into Brands (BrandId, BrandName, Active) values ('" + brandId + "','" + brandName + "','" + active + "')";
             statement.executeUpdate(sqlString);
         } catch (SQLException sqlException) {
             sqlException.printStackTrace();
@@ -40,7 +41,7 @@ public class BrandDao implements IBrandDao<Brand>{
             statement = connection.createStatement();
             resultSet = statement.executeQuery("select * from Brands");
             while(resultSet.next()) {
-                Brand brand = new Brand(resultSet.getString("BrandName"), resultSet.getInt("Active"));
+                Brand brand = new Brand(resultSet.getString("BrandId"), resultSet.getString("BrandName"), resultSet.getInt("Active"));
                 brands.add(brand);
             }
         } catch (SQLException sqlException) {

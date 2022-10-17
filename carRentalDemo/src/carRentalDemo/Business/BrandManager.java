@@ -18,6 +18,8 @@ public class BrandManager implements IBrandManager {
        for(Brand brands : iBrandDao.getAll()) {
            if(brands.getBrandName().equals(brand.getBrandName())) {
                throw new Exception("Marka ismi database'de mevcuttur : " + brand.getBrandName());
+           } else if(brands.getBrandId().equals(brand.getBrandId())) {
+               throw new Exception("Girilen Marka kodundaki Marka ismi veritabanında mecvuttur!!! :" + brand.getBrandId());
            }
        }
        iBrandDao.addBrand(brand);
@@ -27,7 +29,7 @@ public class BrandManager implements IBrandManager {
     @Override
     public List<Brand> getAll() {
         for(Brand b : iBrandDao.getAll()) {
-            System.out.println("Marka Adı : " + b.getBrandName() + " Aktif Mi? :" + b.getActive());
+            System.out.println("Marka Kodu : " + b.getBrandId() +  " Marka Adı : " + b.getBrandName() + " Aktif Mi? :" + b.getActive());
         }
         return null;
     }

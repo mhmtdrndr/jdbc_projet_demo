@@ -1,6 +1,7 @@
 package carRentalDemo.Entities;
 
 public class Color {
+    private String colorId;
 	private String colorName;
 	private int active;
 	
@@ -8,27 +9,35 @@ public class Color {
 		
 	}
 
-	public Color(String colorName, int active) {
-		//this.id = id;
-		this.colorName = colorName;
-		this.active = active;
-	}
+    public Color(String colorId, String colorName, int active) {
+        this.colorId = colorId;
+        this.colorName = colorName;
+        this.active = active;
+    }
 
-	public String getColorName() {
-		return colorName;
-	}
+    public String getColorId() {
+        return colorId;
+    }
 
-	public void setColorName(String colorName) {
-		this.colorName = colorName;
-	}
+    public void setColorId(String colorId) {
+        this.colorId = colorId;
+    }
 
-	public int getActive() {
-		return active;
-	}
+    public String getColorName() {
+        return colorName;
+    }
 
-	public void setActive(int active) {
-		this.active = active;
-	}
+    public void setColorName(String colorName) {
+        this.colorName = colorName;
+    }
+
+    public int getActive() {
+        return active;
+    }
+
+    public void setActive(int active) {
+        this.active = active;
+    }
 	
 	
 

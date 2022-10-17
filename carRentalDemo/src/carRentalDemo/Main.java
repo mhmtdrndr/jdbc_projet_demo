@@ -13,11 +13,12 @@ import carRentalDemo.dataAccess.ColorDao;
 public class Main {
 
 	public static void main(String[] args) throws Exception {
-	    //Car car = new Car("02AAB245",1,1,2019,750,"Sedan");
-	    CarManager carManager = new CarManager(new CarDao());
-	    //carManager.addCar(car);
-	    carManager.getAll();
+	    
+	    Brand brand = new Brand("Mercedes", 1);
 
+	    BrandManager brandManager = new BrandManager(new BrandDao());
+	    brandManager.addBrand(brand);
+	    brandManager.getAll();
 	}
 
 }
