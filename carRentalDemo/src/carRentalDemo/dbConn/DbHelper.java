@@ -14,5 +14,9 @@ public class DbHelper {
 	public void showErrorMessage(SQLException sqlException) throws Exception {
 		throw new Exception("Error : " + sqlException.getMessage() + "\n" + "Error Code : " + sqlException.getErrorCode());		
 	}
+	
+	public static void dbConnectHelper() {
+	    
+	}
 
 }

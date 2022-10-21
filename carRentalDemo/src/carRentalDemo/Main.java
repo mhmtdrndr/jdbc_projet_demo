@@ -13,12 +13,9 @@ import carRentalDemo.dataAccess.ColorDao;
 public class Main {
 
 	public static void main(String[] args) throws Exception {
-	    
-	    Brand brand = new Brand("Mercedes", 1);
 
 	    BrandManager brandManager = new BrandManager(new BrandDao());
-	    brandManager.addBrand(brand);
-	    brandManager.getAll();
+	    brandManager.getBrandId("for");
 	}
 
 }

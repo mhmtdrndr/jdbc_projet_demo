@@ -33,5 +33,14 @@ public class ColorManager implements IColorManager {
         }
         return null;
     }
+    
+    public boolean colorCheck(Color color) {
+        for (Color clr : iColorDao.getAll()) {
+            if(clr.getColorName().isEmpty()) {
+                return false;
+            }
+        }
+        return true;
+    }
 
 }

@@ -6,5 +6,6 @@ import carRentalDemo.Entities.Brand;
 
 public interface IBrandManager {
     void addBrand(Brand brand) throws Exception;
-    List<Brand> getAll();
+    List<Brand> getAll() throws Exception;
+    void getBrandId(String id) throws Exception;
 }

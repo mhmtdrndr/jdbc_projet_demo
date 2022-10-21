@@ -27,11 +27,16 @@ public class BrandManager implements IBrandManager {
     }
 
     @Override
-    public List<Brand> getAll() {
+    public List<Brand> getAll() throws Exception {
         for(Brand b : iBrandDao.getAll()) {
             System.out.println("Marka Kodu : " + b.getBrandId() +  " Marka Adı : " + b.getBrandName() + " Aktif Mi? :" + b.getActive());
         }
         return null;
+    }
+
+    @Override
+    public void getBrandId(String id) throws Exception {
+        iBrandDao.getByBrandId(id);        
     }
 
 }
